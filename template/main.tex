@@ -1,0 +1,185 @@
+\documentclass[12pt]{article}
+
+% ====== PAQUETES ======
+\usepackage[a4paper, left=25mm, right=25mm, bottom=30mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{lipsum} % texto de ejemplo
+\usepackage{fancyhdr}
+\usepackage{hyperref} % para links en el índice
+\usepackage{tocloft}
+\usepackage{tikz}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault} % fuerza sans serif como base
+
+
+% ====== NUMERACIÓN POR LETRAS MAYÚSCULAS ======
+\renewcommand{\thesection}{\Alph{section}}       % Secciones: A, B, C...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % Subsecciones: A.1, A.2, ..
+
+\renewcommand{\cftsecaftersnum}{. } % agrega un punto y espacio después de la letra en el índice
+\newcommand{\thesectiondot}{\thesection.}  % letra + punto
+
+% ====== DEFINICIÓN DE COLORES ======
+\definecolor{rojoUNI}{HTML}{D16969}      % Rojo institucional
+\definecolor{doradoUNI}{HTML}{DBCB9F}    % Dorado institucional
+\definecolor{rojoSuave}{HTML}{d39c9c}    % Rojo secundario
+\definecolor{doradoClaro}{HTML}{eee5cd}  % Dorado claro
+\definecolor{grisNeutro}{HTML}{9B9B9B}   % Gris neutro
+
+% ====== TEXTO Y NEGRITAS ======
+\renewcommand{\rmdefault}{ptm} % fuente Times (más elegante que Computer Modern)
+\renewcommand{\bfseries}{\color{rojoUNI}\fontseries{b}\selectfont} % negritas rojas
+
+% Ajuste para que el índice funcione con letras
+\renewcommand{\cftsecnumwidth}{2em}  % ancho del número de sección en el índice
+\renewcommand{\cftsecaftersnum}{. }  % agrega punto y espacio después de la letra
+
+\renewcommand{\sectionmark}[1]{%
+  \markboth{\thesection.\ #1}{}%
+}
+
+% ====== CONFIGURACIÓN TOC (ÍNDICE) ======
+\renewcommand{\cfttoctitlefont}{\Huge\bfseries\color{rojoUNI}}
+\renewcommand{\cftsecfont}{\Large\color{rojoUNI}\bfseries}
+\renewcommand{\cftsubsecfont}{\large\color{rojoSuave}}
+\renewcommand{\cftsecpagefont}{\bfseries\color{black}\Large}
+\renewcommand{\cftsubsecpagefont}{\color{grisNeutro}\large}
+
+% Ajuste de footskip para que haya espacio suficiente
+\setlength{\footskip}{60pt}
+
+% Pie de página con franja arriba
+\pagestyle{fancy}
+\fancyhf{} 
+
+% Franja en el pie (arriba del área de foot)
+\fancyfoot[C]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.south) [anchor=south, yshift=40pt] {%
+      \includegraphics[width=0.85\paperwidth,height=1cm]{img/footage-red.pdf}%
+    };
+  \end{tikzpicture}%
+}
+
+% Sección izquierda y número de página derecha (sobre la franja)
+\fancyfoot[L]{\bfseries\color{rojoUNI}\leftmark}
+\fancyfoot[R]{\bfseries\color{rojoUNI}\thepage}
+
+\renewcommand{\headrulewidth}{1pt} % grosor de la línea
+\renewcommand{\headrule}{%
+  {\color{rojoUNI}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}%
+}
+
+\fancypagestyle{plain}{%
+  \fancyhf{} % limpiar
+  \fancyfoot[C]{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node at (current page.south) [anchor=south, yshift=40pt] {%
+        \includegraphics[width=0.85\paperwidth,height=1cm]{img/footage-red.pdf}%
+      };
+    \end{tikzpicture}%
+  }
+  \fancyfoot[L]{\bfseries\color{rojoUNI}\leftmark}
+  \fancyfoot[R]{\bfseries\color{rojoUNI}\thepage}
+}
+
+% ====== CONFIGURACIÓN DE AMBIENTES ======
+\newtcolorbox{definicion}[1][]{colback=doradoClaro!40,
+  colframe=rojoUNI, fonttitle=\bfseries\color{white},
+  title=Definición, #1}
+
+\newtcolorbox{teorema}[1][]{colback=white,
+  colframe=doradoUNI, fonttitle=\bfseries\color{black},
+  title=Teorema, #1}
+
+\newtcolorbox{lema}[1][]{colback=white,
+  colframe=rojoSuave, fonttitle=\bfseries\color{white},
+  title=Lema, #1}
+
+\newtcolorbox{ejemplo}[1][]{colback=white,
+  colframe=rojoSuave!80!black, fonttitle=\bfseries\color{white},
+  title=Ejemplo, #1}
+
+\newtcolorbox{restriccion}[1][]{colback=doradoClaro,
+  colframe=grisNeutro, fonttitle=\bfseries\color{white},
+  title=Restricción, #1}
+
+% Nuevo: cuadro de restricciones de PC
+\newtcolorbox{restriccionesPC}[1][]{colback=doradoClaro!40,
+  colframe=rojoUNI, fonttitle=\bfseries\color{white},
+  title=Restricciones, #1}
+
+% ====== DOCUMENTO ======
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    
+    % Espacio inicial antes del logo
+    
+    % Logo
+    \hspace{-2.5cm}\includegraphics[width=0.7\textwidth]{img/uni-fc2.pdf}\par\vspace{0.8cm}
+    %{\fontsize{72}{80}\selectfont\sffamily\bfseries\textcolor{doradoUNI}{UNI}}
+    %{\fontsize{72}{80}\selectfont\sffamily\bfseries\textcolor{rojoUNI}{-FC}}\par\vspace{2cm}
+
+    
+    % Año con estilo ancho/cibernético
+    {\fontsize{72}{80}\selectfont\sffamily\bfseries\textcolor{rojoUNI}{2025}}\par\vspace{2cm}
+
+    
+    % Título
+    {\bfseries\Huge \textcolor{rojoUNI}{CLASE 1}}\par\vspace{0.5cm}
+    
+    % Subtítulo
+    %{\Large Eliminations}\par
+    
+    \vfill
+\end{titlepage}
+
+
+% ÍNDICE
+\tableofcontents
+\newpage
+
+\section{Introducción}
+\lipsum[1]
+
+\begin{definicion}
+Sea $G=(V,E)$ un grafo simple no dirigido. Una \textit{clique} es un subconjunto de vértices que forman un subgrafo completo.
+\end{definicion}
+
+\begin{teorema}
+Todo grafo completo $K_n$ con $n \geq 3$ contiene exactamente $\binom{n}{3}$ triángulos.
+\end{teorema}
+
+\begin{lema}
+En un grafo bipartito no existe ciclo de longitud impar.
+\end{lema}
+
+\begin{ejemplo}
+El grafo estrella $K_{1,n}$ es bipartito: las particiones son el nodo central y el conjunto de hojas.
+\end{ejemplo}
+
+\begin{restriccion}
+El número máximo de aristas en un grafo simple con $n$ vértices es $\binom{n}{2}$.
+\end{restriccion}
+
+% Nuevo ejemplo de restricciones tipo CP
+\begin{restriccionesPC}
+\begin{itemize}
+  \item $1 \leq n \leq 10^5$
+  \item $1 \leq m \leq 2 \cdot 10^5$
+  \item $1 \leq w_i \leq 10^9$
+  \item El grafo es conexo
+\end{itemize}
+\end{restriccionesPC}
+
+\lipsum[2]
+
+\end{document}
