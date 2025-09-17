@@ -1,7 +1,7 @@
 \documentclass[12pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}
+\usepackage[portuguese]{babel} % Alterado de espanhol para português
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{amsthm}
@@ -14,25 +14,25 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 
-% Configuración de algorithm2e para Beamer
+% Configuração de algorithm2e para Beamer
 \SetAlgoNlRelativeSize{-1}
 \SetNlSty{textbf}{(}{)}
 \SetAlFnt{\small}
-\SetInd{0.5em}{0.5em} % Ajusta la indentación
+\SetInd{0.5em}{0.5em} % Ajusta a indentação
 \SetAlCapSkip{1em}
 
-% ====== DEFINICIÓN DE COLORES ======
+% ====== DEFINIÇÃO DE CORES ======
 \definecolor{rojoUNI}{HTML}{D16969}
 \definecolor{doradoUNI}{HTML}{DBCB9F}
 \definecolor{rojoSuave}{HTML}{d39c9c}
 \definecolor{doradoClaro}{HTML}{eee5cd}
 \definecolor{grisNeutro}{HTML}{9B9B9B}
 
-% ====== CONFIGURACIÓN BEAMER ======
+% ====== CONFIGURAÇÃO BEAMER ======
 %\usetheme{Madrid}
 %\usecolortheme{default}
 
-% Personalización de colores de Beamer
+% Personalização de cores do Beamer
 \setbeamercolor{title}{fg=rojoUNI}
 \setbeamercolor{frametitle}{fg=rojoUNI}
 \setbeamercolor{structure}{fg=rojoUNI}
@@ -40,7 +40,7 @@
 \setbeamercolor{block title}{fg=white, bg=rojoUNI}
 \setbeamercolor{block body}{fg=black, bg=doradoClaro!40}
 
-% Pie de página personalizado
+% Rodapé personalizado
 \setbeamertemplate{footline}{
   \begin{tikzpicture}[remember picture,overlay]
     \node at (current page.south) [anchor=south, yshift=0.6cm] {
@@ -58,10 +58,10 @@
   \hspace*{0.1\paperwidth}
 }
 
-% Configuración de bloques
-\newtcolorbox{definicion}[1][]{colback=doradoClaro!40,
+% Configuração de blocos
+\newtcolorbox{definicao}[1][]{colback=doradoClaro!40,
   colframe=rojoUNI, fonttitle=\bfseries\color{white},
-  title=Definición, #1}
+  title=Definição, #1}
 
 \newtcolorbox{teorema}[1][]{colback=white,
   colframe=doradoUNI, fonttitle=\bfseries\color{black},
@@ -71,19 +71,19 @@
   colframe=rojoSuave, fonttitle=\bfseries\color{white},
   title=Lema, #1}
 
-\newtcolorbox{ejemplo}[1][]{colback=white,
+\newtcolorbox{exemplo}[1][]{colback=white,
   colframe=rojoSuave!80!black, fonttitle=\bfseries\color{white},
-  title=Ejemplo, #1}
+  title=Exemplo, #1}
 
-\newtcolorbox{restriccion}[1][]{colback=doradoClaro,
+\newtcolorbox{restricao}[1][]{colback=doradoClaro,
   colframe=grisNeutro, fonttitle=\bfseries\color{white},
-  title=Restricción, #1}
+  title=Restrição, #1}
 
-\newtcolorbox{restriccionesPC}[1][]{colback=doradoClaro!40,
+\newtcolorbox{restricoesPC}[1][]{colback=doradoClaro!40,
   colframe=rojoUNI, fonttitle=\bfseries\color{white},
-  title=Restricciones, #1}
+  title=Restrições, #1}
 
-\newtcolorbox{bloque}[1][]{
+\newtcolorbox{bloco}[1][]{
   colback=doradoClaro!40,
   colframe=rojoUNI,
   fonttitle=\bfseries\color{white},
@@ -113,32 +113,32 @@
 \end{frame}
 
 
-\begin{frame}{Huffman Tree}
+\begin{frame}{Árvore de Huffman}
 
-\begin{definicion}
-    El Huffman Tree de una secuencia $\{w_1, w_2, \dots, w_n\}$ es un árbol binario con $n$ hojas, tal que minimiza
+\begin{definicao}
+    A Árvore de Huffman de uma sequência $\{w_1, w_2, \dots, w_n\}$ é uma árvore binária com $n$ folhas, que minimiza
 
 \[
     \sum_{i=1}^n w_i \times d_i  
 \]
 
-    Donde $d_i$ ($1 \le i \le n$), es la profundidad de la i-ésima hoja en el árbol.
-\end{definicion}
+    Onde $d_i$ ($1 \le i \le n$), é a profundidade da i-ésima folha na árvore.
+\end{definicao}
   
 \end{frame}
 
 \begin{frame}
 
-\begin{ejemplo}
+\begin{exemplo}
 \begin{columns}
 \begin{column}{0.6\textwidth}
-Huffman Tree con costo 
+Árvore de Huffman com custo 
 \begin{align*}
     &w_1 \times 2 + w_2 \times 2 + w_3 \times 1\\
     &2 \times 2 + 3 \times 2 + 6 \times 1 = 16
 \end{align*}
 
-\textbf{Nota:} Tambien podemos comprimir frases usando el camino hacia cada letra (izquieda: 0, derecha: 1).
+\textbf{Nota:} Também podemos comprimir frases usando o caminho para cada letra (esquerda: 0, direita: 1).
     
 \end{column}
 
@@ -147,44 +147,44 @@ Huffman Tree con costo
 \end{column}
 
 \end{columns}
-\end{ejemplo}
+\end{exemplo}
 
 \end{frame}
 
 \begin{frame}
-\hspace*{0.5cm} % Ajuste para mover el algoritmo a la derecha
-\begin{minipage}{0.9\textwidth}
-\SetAlFnt{\footnotesize} % Reducir tamaño de fuente
+\hspace*{0.5cm} % Ajuste para mover o algoritmo para a direita
+\begin{minipage}{0.93\textwidth}
+\SetAlFnt{\footnotesize} % Reduzir tamanho da fonte
 \begin{algorithm}[H]
-  \KwIn{secuencia $w_1, w_2, \dots, w_n$}
-  \KwOut{Huffman Tree}
-  min heap $Q$ con todas las hojas ($nodo_i, w_i$), ordenados por $w_i$\;
+  \KwIn{sequência $w_1, w_2, \dots, w_n$}
+  \KwOut{Árvore de Huffman}
+  min heap $Q$ com todas as folhas ($nodo_i, w_i$), ordenados por $w_i$\;
   \While{$|Q| > 1$}{
-      $(node_i, w_i)\leftarrow$ extraer top de $Q$\;
-      $(node_j, w_j) \leftarrow$ extraer top de $Q$\;
-      Crear un nuevo nodo $node_z$ con hijos $node_i$ y $node_j$\;
-      Asignar $w_z = w_i + w_j$\;
-      Insertar $(node_z, w_z)$ en la cola $Q$\;
+      $(node_i, w_i)\leftarrow$ extrair topo de $Q$\;
+      $(node_j, w_j) \leftarrow$ extrair topo de $Q$\;
+      Criar um novo nó $node_z$ com filhos $node_i$ e $node_j$\;
+      Atribuir $w_z = w_i + w_j$\;
+      Inserir $(node_z, w_z)$ na fila $Q$\;
   }
-  \Return{El único nodo restante en $Q$ (raíz del árbol)}
-  \caption{Construcción de un Huffman Tree}
+  \Return{O único nó restante em $Q$ (raiz da árvore)}
+  \caption{Construção de uma Árvore de Huffman}
 \end{algorithm}
 \end{minipage}
 \end{frame}
 
 \begin{frame}
-\begin{ejemplo}
+\begin{exemplo}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{img/huffmanalgorithm.png}
     \label{fig:enter-label}
 \end{figure}  
-\end{ejemplo}    
+\end{exemplo}    
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[Revisitando Huffman Tree]
-Dado que el algoritmo es óptimo*, podemos concluir que este tiene un costo inferior a alguna configuración, así:
+\begin{bloco}[Revisitando a Árvore de Huffman]
+Dado que o algoritmo é ótimo*, podemos concluir que este tem um custo inferior a alguma configuração, assim:
 
 \[
 \sum_{i=1}^n w_i \times d_i \le \left(\sum_{i=1}^n w_i\right) \log (n)
@@ -192,7 +192,7 @@ Dado que el algoritmo es óptimo*, podemos concluir que este tiene un costo infe
 
 \pause
 
-\textbf{hint:}
+\textbf{dica:}
 
 \begin{figure}
     \centering
@@ -200,28 +200,28 @@ Dado que el algoritmo es óptimo*, podemos concluir que este tiene un costo infe
     \label{fig:enter-label}
 \end{figure}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[Revisitando Huffman Tree]
+\begin{bloco}[Revisitando a Árvore de Huffman]
 
-Sean $n$ conjuntos con pesos $\{w_1, w_2, \dots, w_n\}$, y debemos formar un conjunto que contenga a todos ellos, tal que:
+Sejam $n$ conjuntos com pesos $\{w_1, w_2, \dots, w_n\}$, e devemos formar um conjunto que contenha todos eles, tal que:
 
 \begin{itemize}
-    \item escogemos dos conjuntos $s_x$ y $s_y$.
-    \item creamos un nuevo conjunto $s_z = s_x \cup s_y$, con costo $w_z = w_x + w_y$.
-    \item reemplazamos $s_x$ y $s_y$ con $s_z$.
+    \item escolhemos dois conjuntos $s_x$ e $s_y$.
+    \item criamos um novo conjunto $s_z = s_x \cup s_y$, com custo $w_z = w_x + w_y$.
+    \item substituímos $s_x$ e $s_y$ por $s_z$.
 \end{itemize}
 
-Deseamos que la suma de costos sea mínima.
+Desejamos que a soma dos custos seja mínima.
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[Revisitando Huffman Tree]
-¿El problema es equivalente a hallar un Huffman Tree?
+\begin{bloco}[Revisitando a Árvore de Huffman]
+O problema é equivalente a encontrar uma Árvore de Huffman?
 
 \begin{columns}
 \begin{column}{0.4\textwidth}
@@ -239,12 +239,12 @@ Deseamos que la suma de costos sea mínima.
 \end{figure}
 \end{column}
 \end{columns}
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[Revisitando Huffman Tree]
-¿El problema es equivalente a hallar un Huffman Tree?
+\begin{bloco}[Revisitando a Árvore de Huffman]
+O problema é equivalente a encontrar uma Árvore de Huffman?
 
 \begin{figure}
     \centering
@@ -252,217 +252,217 @@ Deseamos que la suma de costos sea mínima.
     \label{fig:enter-label}
 \end{figure}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[Revisitando Huffman Tree]
+\begin{bloco}[Revisitando a Árvore de Huffman]
 
 \begin{itemize}
-    \item Por tanto, el algoritmo de Huffman Tree genera un costo optimo para el problema. 
+    \item Portanto, o algoritmo da Árvore de Huffman gera um custo ótimo para o problema. 
     \pause
-    \item Aplicación: Deseamos multiplicar $n$ polinomios, y cada vez tomamos dos con menor grado posible, y resolvermos en $O((g_1 + g_2)\log(\max(g_1, g_2)))$, por tanto, podemos multiplicar todo en $O(\sum\limits_i g_i \log(\max\limits_i g_i)\log(n))$.
+    \item Aplicação: Desejamos multiplicar $n$ polinômios, e cada vez tomamos dois com menor grau possível, e resolvemos em $O((g_1 + g_2)\log(\max(g_1, g_2)))$, portanto, podemos multiplicar tudo em $O(\sum\limits_i g_i \log(\max\limits_i g_i)\log(n))$.
 \end{itemize}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
+\begin{bloco}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
 
-Dada una contraseña secreta de longitud $N$ compuesta por las primeras $S$ letras del alfabeto, puedes hacer consultas proponiendo cadenas de longitud $N$. Por cada una, recibes la longitud del mayor \textbf{prefijo} que aparece como \textbf{subsecuencia} en la contraseña. Debes encontrar la contraseña con un máximo de $50000$ consultas.
+Dada uma senha secreta de comprimento $N$ composta pelas primeiras $S$ letras do alfabeto, você pode fazer consultas propondo cadeias de comprimento $N$. Para cada uma, recebe o comprimento do maior \textbf{prefixo} que aparece como \textbf{subsequência} na senha. Deve encontrar a senha com um máximo de $50000$ consultas.
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
+\begin{bloco}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
 
-\textbf{Idea:} realizar $S$ consultas para cada letra, luego podemos unir de la siguiente forma:
+\textbf{Idea:} realizar $S$ consultas para cada letra, depois podemos unir da seguinte forma:
 
 \begin{itemize}
-    \item Sean las secuencias $u_1, u_2, \dots, u_n$ y $v_1, v_2, ..., v_m$.
-    \item Para cada $i$, desde $1$ hasta $n$, intentar colocar $u_i$ antes o después de los primeros $j$ de $v$, nota
-    que tanto el índice $i$ (acierto) como el $j$ (fallo) aumenta, por tanto, se puede realizar en $n + m$ consultas.
+    \item Sejam as sequências $u_1, u_2, \dots, u_n$ e $v_1, v_2, ..., v_m$.
+    \item Para cada $i$, desde $1$ até $n$, tentar colocar $u_i$ antes ou depois dos primeiros $j$ de $v$, note
+    que tanto o índice $i$ (acerto) quanto o $j$ (erro) aumentam, portanto, pode ser realizado em $n + m$ consultas.
 \end{itemize}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
+\begin{bloco}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{img/select.png}
-    \caption{Unión de dos secuencias en ''dacadbaddbaxxba"}
+    \caption{União de duas sequências em ''dacadbaddbaxxba"}
     \label{fig:enter-label}
 \end{figure}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
+\begin{bloco}[\textcolor{green}{password2} (\href{https://www.infoarena.ro/problema/password2}{infoarena})]
 
-\textbf{Idea:} realizar $S$ consultas para cada letra, luego podemos unir de la siguiente forma:
+\textbf{Idea:} realizar $S$ consultas para cada letra, depois podemos unir da seguinte forma:
 
 \begin{itemize}
-    \item Sean las secuencias $u_1, u_2, \dots, u_n$ y $v_1, v_2, ..., v_m$.
-    \item Para cada $i$, desde $1$ hasta $n$, intentar colocar $u_i$ antes o después de los primeros $j$ de $v$, nota
-    que tanto el índice $i$ (acierto) como el $j$ (fallo) aumenta, por tanto, se puede realizar en $n + m$ consultas.
-    \item resolvemos con el algoritmo de Huffman Tree, por tanto, gastamos a lo más $S + N\log S$ consultas.
+    \item Sejam as sequências $u_1, u_2, \dots, u_n$ e $v_1, v_2, ..., v_m$.
+    \item Para cada $i$, desde $1$ até $n$, tentar colocar $u_i$ antes ou depois dos primeiros $j$ de $v$, note
+    que tanto o índice $i$ (acerto) quanto o $j$ (erro) aumentam, portanto, pode ser realizado em $n + m$ consultas.
+    \item resolvemos com o algoritmo da Árvore de Huffman, portanto, gastamos no máximo $S + N\log S$ consultas.
 \end{itemize}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
-\begin{frame}{Argumento Estructural y de Intercambio}
-\begin{definicion}
+\begin{frame}{Argumento Estrutural e de Troca}
+\begin{definicao}
 \begin{itemize}
-    \item {\bfseries Arg. Estructural}: Prueba que cualquier solución óptima debe tener cierta estructura. Ejm: Existe un Huffman Tree, tal que nodos con menor peso son hermanos.
-    \item {\bfseries Arg. Intercambio}: Comparamos la solución del algoritmo con una óptima y muestra que cambiar partes mejora o no empeora.
+    \item {\bfseries Arg. Estrutural}: Prova que qualquer solução ótima deve ter certa estrutura. Ex: Existe uma Árvore de Huffman, tal que nós com menor peso são irmãos.
+    \item {\bfseries Arg. Troca}: Comparamos a solução do algoritmo com uma ótima e mostramos que trocar partes melhora ou não piora.
 \end{itemize}
-\end{definicion}
+\end{definicao}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
+\begin{bloco}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
 
-Se tienen $n$ contenedores con capacidades $c_1, c_2, \dots, c_n$ y $m$ pesas con masas $w_1, w_2, \dots, w_m$. Cada contenedor puede contener cualquier número de pesas, siempre que la suma de sus masas no exceda su capacidad. Además, para todo par $i, j$, se cumple que $w_i \mid w_j$ o $w_j \mid w_i$. Se desea encontrar la cantidad máxima de pesas que pueden colocarse respetando estas condiciones.
+Temos $n$ contêineres com capacidades $c_1, c_2, \dots, c_n$ e $m$ pesos com massas $w_1, w_2, \dots, w_m$. Cada contêiner pode conter qualquer número de pesos, desde que a soma de suas massas não exceda sua capacidade. Além disso, para todo par $i, j$, vale que $w_i \mid w_j$ ou $w_j \mid w_i$. Deseja-se encontrar a quantidade máxima de pesos que podem ser colocados respeitando estas condições.
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
+\begin{bloco}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
 
 \textbf{Idea:} 
 
 \begin{itemize}
-    \item Podemos usar \textbf{búsqueda binaria} sobre la cantidad de pesas a colocar -- probamos si es posible con los $k$ menores pesos --.
+    \item Podemos usar \textbf{busca binária} sobre a quantidade de pesos a colocar -- testamos se é possível com os $k$ menores pesos --.
     \pause
-    \item Sea $S$ un conjunto de pesas que puede ser colocado completamente en los contenedores sin exceder sus capacidades, y sea $m_{max}$ la masa de la pesa más pesada en $S$. Denotamos por $C_S$ el conjunto de todas las configuraciones válidas para $S$.
+    \item Seja $S$ um conjunto de pesos que pode ser colocado completamente nos contêineres sem exceder suas capacidades, e seja $m_{max}$ a massa do peso mais pesado em $S$. Denotamos por $C(S)$ o conjunto de todas as configurações válidas para $S$.
 \end{itemize}
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
+\begin{bloco}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
 
 \textbf{Idea:} 
 
 \begin{itemize}
-    \item \textbf{Argumento Estructural:} 
-    Para cualquier contenedor $t$ con capacidad $w_t \geq m_{\max}$, existe una configuración válida $\mathcal{C}^* \in C(S)$ donde la pesa $m_{\max}$ está colocada en $t$.
+    \item \textbf{Argumento Estrutural:} 
+    Para qualquer contêiner $t$ com capacidade $w_t \geq m_{\max}$, existe uma configuração válida $\mathcal{C}^* \in C(S)$ onde o peso $m_{\max}$ está colocado em $t$.
 \end{itemize}
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
+\begin{bloco}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
 
-\textbf{Prueba:} 
+\textbf{Prova:} 
 
-Sea una configuración cualquiera y veamos que podemos colocar $m_{max}$ en $j$.   
+Seja uma configuração qualquer e vejamos que podemos colocar $m_{max}$ em $j$.   
 
 \begin{itemize}
-    \item Si la suma de pesos en el contenedor $j$ es menor o igual al máximo peso, los podemos intercambiar sin ningún problema. 
+    \item Se a soma dos pesos no contêiner $j$ for menor ou igual ao peso máximo, podemos trocá-los sem nenhum problema. 
     \pause
-    \item En otro caso, ordenamos el contenedor $j$, de mayor a menor $w^{'}_1, w^{'}_2, ..., w^{'}_m$, sea $k$ tal que \(\sum\limits_{i=1}^k w^{'}_i \le m_{max} < \sum\limits_{i=1}^{k+1} w^{'}_i\), se cumple $\sum\limits_{i=1}^k w^{'}_i = m_{max}$ 
+    \item Caso contrário, ordenamos o contêiner $j$, do maior para o menor $w^{'}_1, w^{'}_2, ..., w^{'}_m$, seja $k$ tal que \(\sum\limits_{i=1}^k w^{'}_i \le m_{max} < \sum\limits_{i=1}^{k+1} w^{'}_i\), vale $\sum\limits_{i=1}^k w^{'}_i = m_{max}$ 
 \end{itemize}
-\end{bloque}
+\end{bloco}
 
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
+\begin{bloco}[\textcolor{black}{POI 2007 Weights} (\href{https://szkopul.edu.pl/problemset/problem/h_QPStxSmfEHuL2h_I5Qpa29/site/?key=statement}{szkopul})]
 
     
-\textbf{hint:} Note que $w^{'}_1 \vert m_{max}$, y en general $w^{'}_{r + 1} \vert (m_{max} - \sum\limits_{i=1}^r w^{'}_i)$, para todo $r \le k$.
+\textbf{dica:} Note que $w^{'}_1 \vert m_{max}$, e em geral $w^{'}_{r + 1} \vert (m_{max} - \sum\limits_{i=1}^r w^{'}_i)$, para todo $r \le k$.
     
-\end{bloque}
+\end{bloco}
 
 \end{frame}
 
 
 \begin{frame}
-\begin{bloque}[\textcolor{blue}{Coins} (Polish Junior Olympiad)]
-Se te dan $n$ pilas de monedas. Cada pila contiene exactamente dos monedas. Conoces el valor de cada una de las $2n$ monedas. Puedes seleccionar como máximo $k$ monedas, con la siguiente restricción: 
+\begin{bloco}[\textcolor{blue}{Moedas} (Olimpíada Polonesa Júnior)]
+São dadas $n$ pilhas de moedas. Cada pilha contém exatamente duas moedas. Conhece-se o valor de cada uma das $2n$ moedas. Pode-se selecionar no máximo $k$ moedas, com a seguinte restrição: 
 
 \begin{itemize}
-    \item \textbf{Si eliges la moneda inferior de una pila, también debes elegir la superior de esa misma pila.}
+    \item \textbf{Se escolher a moeda inferior de uma pilha, também deve escolher a superior da mesma pilha.}
 \end{itemize}
 
-Determina el valor total máximo que puedes obtener al seleccionar las monedas
+Determine o valor total máximo que pode ser obtido ao selecionar as moedas
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{blue}{Coins} (Polish Junior Olympiad)]
+\begin{bloco}[\textcolor{blue}{Moedas} (Olimpíada Polonesa Júnior)]
 
 \textbf{Idea:}
 \begin{itemize}
-    \item Hay dos tipos de pilas, las que tienen el máximo valor en la cima, y las que no.
+    \item Há dois tipos de pilhas, as que têm o valor máximo no topo, e as que não têm.
     \pause
-    \item \textbf{Argumento de intercambio:} Si solo hay pilas del tipo 1. Existe una solución óptima que respeta la condición de orden en la elección. (\textbf{hint:} Nunca es óptimo tomar la ficha de abajo antes que la de encima)
+    \item \textbf{Argumento de troca:} Se só há pilhas do tipo 1. Existe uma solução ótima que respeita a condição de ordem na escolha. (\textbf{dica:} Nunca é ótimo tomar a ficha de baixo antes que a de cima)
 \end{itemize}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{blue}{Coins} (Polish Junior Olympiad)]
+\begin{bloco}[\textcolor{blue}{Moedas} (Olimpíada Polonesa Júnior)]
 
 \begin{itemize}
-    \item \textbf{Argumento Estructural:} Si solo hay fichas del tipo 2. Existe una solución que solo toma a lo más una ficha de encima sin su ficha de abajo.\\
+    \item \textbf{Argumento Estrutural:} Se só há fichas do tipo 2. Existe uma solução que só toma no máximo uma ficha de cima sem sua ficha de baixo.\\
     \pause
-    \textbf{Prueba:} Sean las pilas $p_1 = (a_1, b_1)$ y $p_2 = (a_2, b_2)$, tal que $a_1 < b_1$ y $a_2 < b_2$, sin perdida de generalidad $a_1 \le a_2$. Entonces
+    \textbf{Prova:} Sejam as pilhas $p_1 = (a_1, b_1)$ e $p_2 = (a_2, b_2)$, tal que $a_1 < b_1$ e $a_2 < b_2$, sem perda de generalidade $a_1 \le a_2$. Então
 
 \[
-    a_1 + a_2 ~(\text{tomar la cima de ambas}) < 
+    a_1 + a_2 ~(\text{tomar o topo de ambas}) < 
 \]
 \[
-    a_2 + b_2 ~(\text{tomar solo una})
+    a_2 + b_2 ~(\text{tomar só uma})
 \]
 
-    Dos pilas no pueden ser tomadas parcialmente.
+    Duas pilhas não podem ser tomadas parcialmente.
 
 \end{itemize}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{blue}{Coins} (Polish Junior Olympiad)]
+\begin{bloco}[\textcolor{blue}{Moedas} (Olimpíada Polonesa Júnior)]
 
 \begin{itemize}
     
-    \item Si tomamos $k_1$ fichas de pilas de tipo 1, estas siempre pueden ser las $k_1$ fichas mayores, si tomamos $k_2$ fichas de pilas de tipos 2, si es una cantidad par, tomamos las $k_2 / 2$ pilas con valor total mayor, en otro caso tomamos la mayor ficha de cima no escogida, o tomamos la siguiente mayor pila y quitamos la menor fichar de abajo escogida.   
+    \item Se tomamos $k_1$ fichas de pilhas do tipo 1, estas sempre podem ser as $k_1$ fichas maiores, se tomamos $k_2$ fichas de pilhas do tipo 2, se for uma quantidade par, tomamos as $k_2 / 2$ pilhas com valor total maior, caso contrário tomamos a maior ficha de topo não escolhida, ou tomamos a próxima maior pilha e removemos a menor ficha de baixo escolhida.   
     
 \end{itemize}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
-\begin{bloque}[\textcolor{blue}{Coins} (Polish Junior Olympiad) ]
+\begin{bloco}[\textcolor{blue}{Moedas} (Olimpíada Polonesa Júnior) ]
 
 \begin{figure}
     \centering
     \includegraphics[width=0.97\linewidth]{img/coins-greedy.png}
-    \caption{Elección de $k=7$ fichas de pilas del tipo 2.}
+    \caption{Escolha de $k=7$ fichas de pilhas do tipo 2.}
     \label{fig:enter-label}
 \end{figure}
 
-\end{bloque}
+\end{bloco}
 \end{frame}
 
 \begin{frame}
 
 \centering
-\Large Gracias.
+\Large Obrigado.
 
 \end{frame}
 \end{document}
